@@ -12,6 +12,6 @@ class Fertilizer(models.Model):
         return "%s %s-%s-%s" % (self.name, self.percent_N, self.percent_P, self.percent_X)
 
 class Application(models.Model):
-    fertilizer = models.ForeignKey(Fertilizer, on_delete=models.CASCADE) 
+    Fertilizer = models.ForeignKey(Fertilizer, on_delete=models.CASCADE) 
     bags_applied = models.DecimalField(max_digits=4, decimal_places=2)
     date_applied = models.DateField()
