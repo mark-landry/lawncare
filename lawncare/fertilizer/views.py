@@ -1,4 +1,4 @@
-from django.http import HttpResponse, Http404
+from django.http import Http404, HttpResponseRedirect
 from django.shortcuts import render
 from .models import Fertilizer, Application
 
@@ -31,4 +31,9 @@ def detail(request, fert_id):
     return render(request, 'fertilizer/fertilizer.html', context)
 
 def apply(request, fert_id):
-    return HttpResponse("Apply fertilizer %s" % fert_id )
+    fertilizer =  Fertilizer.objects.get(pk=fert_id)
+    bags = request.POST['bags']
+    date = request.POST['date']
+
+    fertilizer.application_set.create(bags_applied=bags, date_applied=date)
+    return HttpResponseRedirect('/fert')
