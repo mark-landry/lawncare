@@ -1,0 +1,30 @@
+<h1>Fertilizer Applications</h1>
+
+<a href=""></a>
+
+<table>
+  <thead>
+    <tr>
+      <th>Product</th>
+      <th>Bags Applied</th>
+      <th>Application Date</th>
+      <th>Amount of N</th>
+      <th>Amount of p</th>
+      <th>Amount of K</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for application in applications %}
+    <tr>
+      <td>{{application.Fertilizer}}</td>
+      <td>{{apllication.bags_applied}}</td>
+      <td>{{application.date_applied}}</td>
+      <td>N</td>
+      <td>P</td>
+      <td>X</td>
+    </tr>
+    {% empty %}
+    <p>No Applications</p>
+    {% endfor %}
+  </tbody>
+</table>

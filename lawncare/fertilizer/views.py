@@ -1,8 +1,17 @@
 from django.http import HttpResponse
+from django.template import loader
+from .models import Fertilizer, Application
 
 # Create your views here.
 def index(request):
-    return HttpResponse("Show all the applied fertilizers")
+    applications =  Application.objects.all()
+    template = loader.get_template('fertilizer/index.html')
+
+    context = {
+        'applications': applications
+    }
+
+    return HttpResponse(template.render(context, request))
 
 def fertilizers(request):
     return HttpResponse("List all available fertilizers")
