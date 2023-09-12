@@ -1,27 +1,23 @@
 from django.http import HttpResponse
-from django.template import loader
+from django.shortcuts import render
 from .models import Fertilizer, Application
 
 # Create your views here.
 def index(request):
     applications =  Application.objects.all()
-    template = loader.get_template('fertilizer/index.html')
-
     context = {
         'applications': applications
     }
 
-    return HttpResponse(template.render(context, request))
+    return render(request, 'fertilizer/index.html', context)
 
 def fertilizers(request):
     fertilizers = Fertilizer.objects.all()
-    template = loader.get_template('fertilizer/fertilizers.html')
-
     context = {
         'fertilizers': fertilizers
     }
 
-    return HttpResponse(template.render(context, request))
+    return render(request, 'fertilizer/fertilizers.html', context)
 
 def detail(request, fert_id):
     return HttpResponse("Show the fertilizer detail of %s" % fert_id )
