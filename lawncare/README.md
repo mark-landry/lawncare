@@ -44,3 +44,14 @@
 > > > from fertilizer.models import Fertilizer
 > > > Fertilizer.objects.all()
 > > > <QuerySet [<Fertilizer: Milorganite 6.00-4.00-0.00>]>`
+
+## Admin Portal
+
+`markl@MyOfficeDesktop:/mnt/c/Users/mark_/GIT/djangoTutorial/lawncare$ python3 manage.py createsuperuser
+Username (leave blank to use 'markl'): markladmin
+Email address: mark_landry2@yahoo.com
+Password: 
+Password (again): 
+This password is too common.
+Bypass password validation and create user anyway? [y/N]: y
+Superuser created successfully.`
