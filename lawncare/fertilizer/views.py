@@ -14,7 +14,14 @@ def index(request):
     return HttpResponse(template.render(context, request))
 
 def fertilizers(request):
-    return HttpResponse("List all available fertilizers")
+    fertilizers = Fertilizer.objects.all()
+    template = loader.get_template('fertilizer/fertilizers.html')
+
+    context = {
+        'fertilizers': fertilizers
+    }
+
+    return HttpResponse(template.render(context, request))
 
 def detail(request, fert_id):
     return HttpResponse("Show the fertilizer detail of %s" % fert_id )
