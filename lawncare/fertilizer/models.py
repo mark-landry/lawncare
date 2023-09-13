@@ -15,3 +15,10 @@ class Application(models.Model):
     Fertilizer = models.ForeignKey(Fertilizer, on_delete=models.CASCADE) 
     bags_applied = models.DecimalField(max_digits=4, decimal_places=2)
     date_applied = models.DateField()
+
+class ApplicationAmount:
+    def __init__(self, application, applied_n, applied_p, applied_x):
+        self.application = application
+        self.applied_n = applied_n
+        self.applied_p = applied_p
+        self.applied_x = applied_x

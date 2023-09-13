@@ -1,8 +1,9 @@
+{% extends 'fertilizer/base.html' %} {% block content %}
 <h1>Fertilizer Applications</h1>
 
 <a href=""></a>
 
-<table>
+<table class="table">
   <thead>
     <tr>
       <th>Product</th>
@@ -14,17 +15,18 @@
     </tr>
   </thead>
   <tbody>
-    {% for application in applications %}
+    {% for applicationAmount in applicationAmounts %}
     <tr>
-      <td>{{application.Fertilizer}}</td>
-      <td>{{apllication.bags_applied}}</td>
-      <td>{{application.date_applied}}</td>
-      <td>N</td>
-      <td>P</td>
-      <td>X</td>
+      <td>{{applicationAmount.application.Fertilizer}}</td>
+      <td>{{applicationAmount.application.bags_applied}}</td>
+      <td>{{applicationAmount.application.date_applied}}</td>
+      <td>{{applicationAmount.applied_n}}</td>
+      <td>{{applicationAmount.applied_p}}</td>
+      <td>{{applicationAmount.applied_x}}</td>
     </tr>
     {% empty %}
     <p>No Applications</p>
     {% endfor %}
   </tbody>
 </table>
+{% endblock %}
