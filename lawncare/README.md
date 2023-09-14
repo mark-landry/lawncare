@@ -37,7 +37,7 @@
 > > > Fertilizer.objects.all()
 > > > <QuerySet [<Fertilizer: Fertilizer object (1)>]>
 > > > quit()
-> > > markl@MyOfficeDesktop:/mnt/c/Users/mark\_/GIT/djangoTutorial/lawncare$ python3 manage.py shell
+> > > lawncare$ python3 manage.py shell
 > > > Python 3.10.12 (main, Jun 11 2023, 05:26:28) [GCC 11.4.0] on linux
 > > > Type "help", "copyright", "credits" or "license" for more information.
 > > > (InteractiveConsole)
