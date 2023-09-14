@@ -47,7 +47,7 @@
 
 ## Admin Portal
 
-`markl@MyOfficeDesktop:/mnt/c/Users/mark_/GIT/djangoTutorial/lawncare$ python3 manage.py createsuperuser
+`lawncare$ python3 manage.py createsuperuser
 Username (leave blank to use 'markl'): markladmin
 Email address: mark_landry2@yahoo.com
 Password: 
